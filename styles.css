@@ -1,0 +1,381 @@
+/* Define color variables for light theme */
+:root {
+  --bg-color: #f0f4f8;
+  --text-color: #2a3439;
+  --primary-color: #3a86ff;
+  --accent-color: #ff4d6d;
+  --card-color: #fff;
+  --input-color: #e3e9f1;
+  --shadow: 0 4px 16px rgba(58, 134, 255, 0.2);
+  --low-color: #2ecc71;
+  --medium-color: #f1c40f;
+  --high-color: #e74c3c;
+}
+
+/* Define color variables for dark theme */
+[data-theme="dark"] {
+  --bg-color: #121619;
+  --text-color: #d0d7de;
+  --primary-color: #3399ff;
+  --accent-color: #ff5c77;
+  --card-color: #1e272e;
+  --input-color: #273340;
+  --shadow: 0 4px 18px rgba(51, 153, 255, 0.5);
+  --input-text-color: #cbd4e1;
+  --input-placeholder-color: #7a8a99;
+}
+
+/* Style for form inputs, selects and textareas in dark mode */
+[data-theme="dark"] input,
+[data-theme="dark"] select,
+[data-theme="dark"] textarea {
+  color: var(--input-text-color);
+  background-color: var(--input-color);
+  caret-color: var(--input-text-color);
+}
+
+[data-theme="dark"] input::placeholder,
+[data-theme="dark"] textarea::placeholder {
+  color: var(--input-placeholder-color);
+}
+
+/* Reset default margin and padding, apply font globally */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Main body styling */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header styling */
+header {
+  background: var(--primary-color);
+  padding: 1rem 2rem;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+/* Layout container */
+.layout {
+  display: flex;
+  margin-top: 70px;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Sidebar styling */
+.sidebar {
+  width: 280px;
+  background-color: var(--card-color);
+  padding: 2rem 1rem;
+  box-shadow: var(--shadow);
+  flex-shrink: 0;
+  height: calc(100vh - 70px);
+  overflow-y: auto;
+  position: fixed;
+  top: 70px;
+  left: 0;
+}
+
+/* Content area styling */
+.content {
+  margin-left: 280px;
+  padding: 2rem;
+  flex: 1;
+  overflow-y: auto;
+  height: calc(100vh - 70px);
+}
+
+/* Form input fields styling */
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--input-color);
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+/* Task form container styling */
+.task-form {
+  background-color: var(--card-color);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+}
+
+/* Task form row flex layout */
+.task-form .row {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Default button styling */
+button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+button:hover {
+  background-color: #13907d;
+}
+
+/* Task list grid layout */
+.task-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Individual task card styling */
+.task-card {
+  background-color: var(--card-color);
+  padding: 1.75rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Hover effect for task cards */
+.task-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Completed task card styling */
+.task-card.completed {
+  opacity: 0.6;
+  text-decoration: line-through;
+  filter: grayscale(60%);
+}
+
+/* Task card title */
+.task-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.6rem;
+  font-weight: 700;
+}
+
+/* Task card description */
+.task-card p {
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.4;
+}
+
+/* Priority badge styling */
+.badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 24px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+}
+
+/* Priority levels color coding */
+.low {
+  background-color: var(--low-color);
+}
+.medium {
+  background-color: var(--medium-color);
+}
+.high {
+  background-color: var(--high-color);
+}
+
+/* Button container inside task cards */
+.task-card > div {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Individual buttons inside task cards */
+.task-card > div button {
+  flex: 1 1 30%;
+  border-radius: 8px;
+  padding: 0.5rem 0.8rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(26, 188, 156, 0.4);
+}
+
+/* Notification popup styling */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--accent-color);
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  display: none;
+  z-index: 999;
+}
+
+/* Modal overlay styling */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Hide modal when not active */
+.modal.hidden {
+  display: none;
+}
+
+/* Modal content box */
+.modal-content {
+  background: var(--card-color);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+/* Modal buttons container */
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* Modal button styles */
+.modal-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  min-width: 100px;
+  color: white;
+  transition: 0.3s ease;
+}
+
+/* Cancel button color */
+.modal-btn.cancel {
+  background-color: var(--accent-color);
+}
+.modal-btn.cancel:hover {
+  background-color: #d94a5f;
+}
+
+/* Theme toggle icon */
+.theme-toggle {
+  cursor: pointer;
+  font-size: 1.7rem;
+}
+
+/* Error message color */
+.error {
+  color: var(--accent-color);
+  margin-top: 0.5rem;
+}
+
+/* Responsive adjustments for tablets and smaller screens */
+@media (max-width: 1200px) {
+  .task-list {
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .layout {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    position: relative;
+    top: 0;
+    height: auto;
+    padding: 1.5rem 1rem;
+  }
+  .content {
+    margin-left: 0;
+    padding: 1.5rem 1rem;
+  }
+  .task-form {
+    padding: 1.5rem 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 1rem;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .task-list {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    gap: 1rem;
+  }
+  .task-card > div button {
+    flex: 1 1 100%;
+  }
+  button,
+  input,
+  textarea,
+  select {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    padding: 1rem 1.25rem;
+    max-width: 90%;
+  }
+}
