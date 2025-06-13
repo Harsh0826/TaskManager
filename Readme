@@ -1,0 +1,107 @@
+# Task Manager Application
+
+This is a simple Task Manager web application built using **HTML, CSS, and JavaScript (ES6)**.  
+It allows users to create, edit, delete, filter, search, and sort tasks. Tasks are stored locally in the browser using `localStorage`, so the data persists even after refreshing or closing the browser.
+
+---
+
+## Features
+
+- **Add Task**: Create new tasks with Title, Description, Priority, and Category.
+- **Edit Task**: Modify existing tasks.
+- **Delete Task**: Remove tasks after confirmation.
+- **Mark Complete**: Mark tasks as completed or uncompleted.
+- **Filter by Category**: Display tasks based on selected category.
+- **Sort by Priority**: Sort tasks from High to Low priority and vice versa.
+- **Search Tasks**: Search for tasks by title or description.
+- **Dark/Light Theme Toggle**: Switch between light and dark themes.
+- **Local Storage**: Tasks are stored in browser `localStorage` for persistence.
+- **Responsive Design**: Fully responsive across all screen sizes.
+
+---
+
+## Technologies Used
+
+- HTML5
+- CSS3 (with custom variables and responsive design)
+- Vanilla JavaScript (ES6+)
+- `localStorage` API
+
+---
+
+## 🛠 What I Learned
+
+- **DOM Manipulation**  
+  Handling dynamic content updates like task creation, filtering, sorting, and editing.
+
+- **JavaScript Classes & OOP**  
+  Structuring code using classes (`Task` and `TaskManager`) for better maintainability and scalability.
+
+- **Event Handling**  
+  Adding multiple event listeners for form submissions, button clicks, and modal controls.
+
+- **Local Storage API**  
+  Storing tasks locally in the browser so data persists across sessions.
+
+- **CSS Flexbox & Grid**  
+  Creating responsive layouts for both desktop and mobile screens.
+
+- **Theme Switching with CSS Variables**  
+  Using `data-theme` attribute and custom CSS variables for dynamic light and dark themes.
+
+- **Error Handling**  
+  Validating user input and providing clear error messages.
+
+- **User Experience**  
+  Adding notifications, confirmation modals, and visual feedback for better usability.
+
+---
+
+## 🎨 Design Decisions
+
+### 1️⃣ Layout Structure
+
+- Used a **fixed header** for easy access to the theme toggle.
+- Applied a **two-column layout**: sidebar for filters, main content for task list.
+- The design is fully **responsive** for smaller devices, automatically stacking content.
+
+### 2️⃣ Styling
+
+- Used **CSS Variables (`:root`)** for easy theme switching and consistent color schemes.
+- Implemented **card-based design** for tasks using shadows, border-radius, and hover effects.
+- Chose soft, modern color palettes with high contrast for accessibility.
+
+### 3️⃣ Features
+
+- **Add, Edit, Delete, Mark Complete** for tasks.
+- **Search, Filter, Sort** tasks based on category and priority.
+- **Modal dialogs** for confirmation and editing tasks.
+- **Priority badges** with distinct colors for quick visual recognition.
+- **Notification system** for important task updates (e.g., adding high-priority tasks).
+- **Theme toggle** to switch between light and dark modes for better user comfort.
+
+---
+
+## 🔧 How It Works
+
+- All tasks are stored locally in the browser using `localStorage`.
+- On page load, tasks are loaded and rendered dynamically.
+- Users interact with the UI to perform actions, and changes are immediately reflected both in UI and storage.
+- CSS handles theme switching by changing `data-theme` attribute and applying variable colors accordingly.
+- Modals ensure that edits and deletions are intentional to prevent accidental changes.
+
+---
+
+## 🚀 Future Improvements
+
+- Use IndexedDB for more robust data storage.
+- Add due dates and reminders.
+- Allow drag-and-drop task sorting.
+- Add user authentication for multi-user support.
+- Build an API backend to store tasks on a server.
+
+---
+
+✅ This project has helped me strengthen my understanding of **front-end development fundamentals**, improved my design decisions, and taught me to think like both a developer and a user.
+
+---
