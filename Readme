@@ -92,16 +92,6 @@ It allows users to create, edit, delete, filter, search, and sort tasks. Tasks a
 
 ---
 
-## 🚀 Future Improvements
-
-- Use IndexedDB for more robust data storage.
-- Add due dates and reminders.
-- Allow drag-and-drop task sorting.
-- Add user authentication for multi-user support.
-- Build an API backend to store tasks on a server.
-
----
-
 ✅ This project has helped me strengthen my understanding of **front-end development fundamentals**, improved my design decisions, and taught me to think like both a developer and a user.
 
 ---
